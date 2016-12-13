@@ -1,0 +1,123 @@
+CREATE DATABASE `codingtondb`;
+
+USE `codingtondb`;
+
+DROP TABLE IF EXISTS `codingtondb`.`place`;
+CREATE TABLE  `codingtondb`.`place` (
+  `placeid` varchar(5) NOT NULL,
+  `placename` varchar(25) NOT NULL,
+  `capacity` int(3) NOT NULL,
+  `description` varchar(20) DEFAULT NULL,
+  `workinghours` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`placeid`)
+);
+
+DROP TABLE IF EXISTS `codingtondb`.`building`;
+CREATE TABLE  `codingtondb`.`building` (
+  `buildingid` varchar(5) NOT NULL,
+  `placeid` varchar(5) DEFAULT NULL,
+  PRIMARY KEY (`buildingid`),
+  KEY `p_bfkey` (`placeid`),
+  CONSTRAINT `p_bfkey` FOREIGN KEY (`placeid`) REFERENCES `place` (`placeid`)
+);
+
+DROP TABLE IF EXISTS `codingtondb`.`zoo`;
+CREATE TABLE  `codingtondb`.`zoo` (
+  `zooid` varchar(5) NOT NULL,
+  `zooname` varchar(35) NOT NULL,
+  `animalcount` int(3) DEFAULT NULL,
+  `placeid` varchar(5) DEFAULT NULL,
+  PRIMARY KEY (`zooid`),
+  KEY `p_zfkey` (`placeid`),
+  CONSTRAINT `p_zfkey` FOREIGN KEY (`placeid`) REFERENCES `place` (`placeid`)
+);
+
+DROP TABLE IF EXISTS `codingtondb`.`park`;
+CREATE TABLE  `codingtondb`.`park` (
+  `parkid` varchar(5) NOT NULL,
+  `parkname` varchar(35) NOT NULL,
+  `parkcategory` varchar(20) DEFAULT NULL,
+  `placeid` varchar(5) DEFAULT NULL,
+  PRIMARY KEY (`parkid`),
+  KEY `p_pfkey` (`placeid`),
+  CONSTRAINT `p_pfkey` FOREIGN KEY (`placeid`) REFERENCES `place` (`placeid`)
+);
+
+DROP TABLE IF EXISTS `codingtondb`.`stadium`;
+CREATE TABLE  `codingtondb`.`stadium` (
+  `stadiumid` varchar(5) NOT NULL,
+  `stadiumname` varchar(35) DEFAULT NULL,
+  `buildingid` varchar(5) DEFAULT NULL,
+  PRIMARY KEY (`stadiumid`),
+  KEY `b_sfkey` (`buildingid`),
+  CONSTRAINT `b_sfkey` FOREIGN KEY (`buildingid`) REFERENCES `building` (`buildingid`)
+);
+
+DROP TABLE IF EXISTS `codingtondb`.`theater`;
+CREATE TABLE  `codingtondb`.`theater` (
+  `theaterid` varchar(5) NOT NULL,
+  `theatername` varchar(35) NOT NULL,
+  `buildingid` varchar(5) DEFAULT NULL,
+  PRIMARY KEY (`theaterid`),
+  KEY `b_tfkey` (`buildingid`),
+  CONSTRAINT `b_tfkey` FOREIGN KEY (`buildingid`) REFERENCES `building` (`buildingid`)
+);
+
+DROP TABLE IF EXISTS `codingtondb`.`event`;
+CREATE TABLE  `codingtondb`.`event` (
+  `eventid` varchar(5) NOT NULL,
+  `eventname` varchar(35) NOT NULL,
+  `description` varchar(40) DEFAULT NULL,
+  `duration` int(11) DEFAULT NULL,
+  `eventtype` varchar(20) NOT NULL,
+  `schedule` varchar(20) DEFAULT NULL,
+  `ticketprice` int(4) DEFAULT NULL,
+  `placeid` varchar(5) DEFAULT NULL,
+  `placemap` varchar(5) DEFAULT NULL,
+  PRIMARY KEY (`eventid`),
+  KEY `p_efkey` (`placeid`),
+  CONSTRAINT `p_efkey` FOREIGN KEY (`placeid`) REFERENCES `place` (`placeid`)
+);
+
+insert into place(placeid,placename,capacity,description,workinghours)
+values
+('P001','PLACE1',3000,'Open area model','9:00 to 21:00'),
+('P002','PLACE2',500,'Closed amphitheater','7:00 to 20:00'),
+('P003','PLACE3',5000,'Open exp model','8:00 to 21:00');
+
+insert into building(buildingid,placeid) values
+('B001','P001'),
+('B002','P002'),
+('B003','P001'),
+('B004','P003');
+
+insert into zoo(zooid,zooname,animalcount,placeid) values
+('Z001','SouthTown Zoo',300,'P003'),
+('Z002','SouthTown Golden Paradise Zoo',500,'P003');
+
+insert into park(parkid,parkname,parkcategory,placeid) values
+('PR01','SouthTown Central Park','Theme Park','P001'),
+('PR02','SouthTown GlobalNetwork gardens','Natural Park','P001');
+
+insert into stadium(stadiumid,stadiumname,buildingid) values
+('S001','NorthTown Sports Arena','B001'),
+('S002','NorthTown HumanEx Sports Stadium','B003');
+
+insert into Theater(theaterid,theatername,buildingid) values
+('T001','Northtown Multiplex cinemas','B002'),
+('T002','Northtown Jade Theater','B002');
+
+insert into event(eventid,eventname,description,duration,eventtype,schedule,ticketprice,placeid)
+values
+('E001','HolidayLights','Lighting trees in Central park',6,'Adults and Kids','1700 to 2300',5,'P001'),
+('E002','TulipExhibition','Different colored tulips from norway',9,'Adults and Kids','900 to 1800',3,'P001'),
+('E003','ChristmasEveBall','Ball for Singles',3,'Adults','1700 to 2000',15,'P002'),
+('E004','Nutcracker Ballet','Ballet with double acts ',4,'Adults','1800 to 2200',10,'P002'),
+('E005','Klenz for Kids','Painting and singing for Kids',6,'Kids','1000 to 1600',5,'P002'),
+('E006','Guitar Afternoon','Free Music and Live guitar',2,'Adults and Kids','1200 to 1400',1,'P002'),
+('E007','Tennis Showdown','Premier Tennis games',4,'Adults and Kids','1000 to 1400',15,'P001'),
+('E008','NY gaints football','Leauge football games',6,'Adults and Kids','1000 to 1600',15,'P001'),
+('E009','Winter wonderland','Ice Sculptures',4,'Adults and Kids','1800 to 2200',5,'P003'),
+('E010','Centralpark Zoo Winterfest','show of polarbears and penguins',4,'Adults and Kids','1800 to 2200',5,'P003');
+
+

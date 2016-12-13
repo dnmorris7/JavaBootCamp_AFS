@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<newcodington>
+
+<events>
+		<event eventname="HolidayLights">
+			<description>Lighting trees in Central park</description>
+			<duration>6</duration>
+			<eventtype>Adults and Kids</eventtype>
+			<schedule>1700 to 2300</schedule>
+			<ticketPrice>5</ticketPrice>
+			<placeId>P001</placeId>
+		</event>
+		<event eventname="TulipExhibition">
+			<description>Different colored tulips from Norway</description>
+			<duration>9</duration>
+			<eventtype>Adults and Kids</eventtype>
+			<schedule>900 to 1800</schedule>
+			<ticketPrice>3</ticketPrice>
+			<placeId>P002</placeId>
+		</event>
+		<event eventname='ChristmasEveBall'>
+			<description>Ball for Singles</description>
+			<duration>3
+			<eventtype>Adults and Kids</eventtype>
+			<schedule>1700 to 2000</schedule>
+			<ticketPrice>15</ticketPrice>
+			<placeId>P003</placeId>		
+		<event eventname=Klenz for Kids >
+			<description>Painting and singing for Kids</description>
+			<duration>6</duration>
+			<eventtype>Kids</eventtype>
+			<schedule>1000 to 1600</schedule>
+			<ticketPrice>5</ticketPrice>
+			<placeId>P001</placeId>
+		</event>	
+</events>
+</newcodington>

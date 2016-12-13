@@ -1,0 +1,26 @@
+body { 
+	
+/* TODO 1 - write code to set the following properties
+			background-color, margin-left, margin-right: 20%, border, padding and font-family
+*/	
+	   background-color: #d2b48c;
+       margin-left: 20%;
+       margin-right: 20%;
+       border: 2px dotted gray;
+       padding: 10px 10px 10px 10px;
+       font-family: sans-serif;
+     } 
+
+// TODO 2 - set the font-style of the heading tag to italic   
+h1 {
+         font-style: italic;}
+ 
+
+#mybtn {
+	
+// TODO 3 - change to color to white, background-color to brown and font-weight to bold
+         color: white;
+         font-weight: bold;
+         background-color: brown;
+ 
+}

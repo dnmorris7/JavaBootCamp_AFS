@@ -1,0 +1,17 @@
+USE codingtondb;
+
+DROP TABLE IF EXISTS codingtondb.museum;
+
+create table museum(
+
+museumid varchar(5) not null PRIMARY KEY,
+museumname varchar(35) not null,
+museumtype varchar(20) default null,
+buildingid varchar(5) default null references building(buildingid)
+);
+
+
+
+insert into museum (museumid,museumname,museumtype,buildingid) values
+('M001','NorthTown Science Museum','Science and Tech','B002'),
+('M002','NorthTown Natural History Museum','Historical','B002');

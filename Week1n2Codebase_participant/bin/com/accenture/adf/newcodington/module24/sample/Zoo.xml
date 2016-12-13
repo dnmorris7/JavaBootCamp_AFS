@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ZooTransform.xsl"?>
+<zoo>
+	<animal>
+		<class>Monkey</class>
+		<quantity>20</quantity>
+	</animal>
+	<animal>
+		<class>Elephant</class>
+		<quantity>6</quantity>
+	</animal>
+	<animal>
+		<class>Tiger</class>
+		<quantity>3</quantity>
+	</animal>
+</zoo> 
+

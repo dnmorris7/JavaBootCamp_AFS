@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN/EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!--  register HelloSeeItImpl using <beans> and <bean> tag -->
+
+<beans>
+<bean id="hello" class="com.accenture.adf.newcodington.module26.sample.HelloSeeItImpl"
+ singleton="false"/>
+</beans>

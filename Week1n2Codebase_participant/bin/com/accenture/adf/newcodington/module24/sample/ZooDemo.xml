@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zoo>
+	<animal>
+		<class>
+			Monkey
+			<quantity>20</quantity>
+		</class>
+	</animal>
+	<animal>
+		<cla ss>Elephant</cla ss>
+		<quantity>6</quantity>
+	</animal>
+	<animal>
+		<class>
+			Tiger
+			<quantity>3</quantity>
+	</animal>
+</zoo> 
+

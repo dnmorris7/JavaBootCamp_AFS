@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ADF 2.0 Java</title>
+
+<!-- The tag below is linking to the CSS file to be created during CSS Try It task 
+ 	 This tag will have an impact on the web page after the CSS Try It task is complete -->
+<link rel="stylesheet" type="text/css" href="CssTryIt.css">
+
+<!-- The tag below is linking to the JavaScript file which contains the function to validate the form
+	 This tag will have an impact on the web page after the JavaScript See It task is complete -->
+<!-- Javascript function to validate the form -->
+<script language="javascript" src="TryIt.js"></script>
+
+</head>
+<body>
+	<center>
+		<h1>Employee Registration System</h1>
+		<hr>
+		<form>
+			<!-- TODO - Create a registration form, 
+			which will accept the employee id, name and department id of an employee -->
+			<table border=1>
+				<thead>Employee Information
+				</thead>
+				<tr>
+					<td>Employee Id</td>
+					<td><input type="text" id="empID" name="employeeID" /></td>
+
+				</tr>
+				<tr>
+					<td>Employee Name</td>
+					<td><input type="text" id="empName" name="employeeName" /></td>
+				</tr>
+				<tr>
+					<td>Department Id</td>
+					<td><input type="text" id="depID" name="departmentID" /></td>
+				</tr>
+			</table>
+			<input type="submit" id="empButton" value="Add Employee"
+					onclick="addEmployee()">
+		</form>
+	</center>
+</body>
+</html>

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: NewCodingtonAdminPortal
+Bundle-SymbolicName: NewCodingtonAdminPortal
+Bundle-Version: 1.0.0.qualifier
+Export-Package: com.accenture.newcodington.dao,
+ com.accenture.newcodington.entity,
+ com.accenture.newcodington.helper,
+ com.accenture.newcodington.service,
+ com.accenture.newcodington.servlet
